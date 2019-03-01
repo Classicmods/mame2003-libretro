@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 DEBUG=0
 DEBUGGER=0
 SPLIT_UP_LINK=0
@@ -614,7 +613,7 @@ ifeq ($(SPLIT_UP_LINK), 1)
 	@rm $@.in
 endif
 	rm -f $(OBJECTS) $(TARGET)
-=======
+
 TARGET_NAME := mame2003
 CORE_DIR    := src
 
@@ -1291,4 +1290,3 @@ ifeq ($(SPLIT_UP_LINK), 1)
 	@rm $@.in
 endif
 	rm -f $(OBJECTS) $(TARGET)
->>>>>>> b0142d797cf5caebd2d012acb6fa811de3b0eeb3
