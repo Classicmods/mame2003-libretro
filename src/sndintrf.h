@@ -62,17 +62,22 @@ struct MachineSound
 #include "sound/pokey.h"
 #endif
 #if (HAS_NES)
- #ifndef MESS
 #include "sound/nes_apu.h"
- #else
-#include "sound/nesintf.h"
- #endif
 #endif
 #if (HAS_ASTROCADE)
 #include "sound/astrocde.h"
 #endif
 #if (HAS_NAMCO)
 #include "sound/namco.h"
+#endif
+#if (HAS_NAMCO_15XX)
+#include "sound/namco.h"
+#endif
+#if (HAS_NAMCO_52XX)
+#include "sound/namco52.h"
+#endif
+#if (HAS_NAMCO_54XX)
+#include "sound/namco54.h"
 #endif
 #if (HAS_NAMCONA)
 #include "sound/namcona.h"
@@ -179,19 +184,6 @@ struct MachineSound
 #if (HAS_YMF271)
 #include "sound/ymf271.h"
 #endif
-
-#ifdef MESS
-#if (HAS_BEEP)
-#include "sound/beep.h"
-#endif
-#if (HAS_SPEAKER)
-#include "sound/speaker.h"
-#endif
-#if (HAS_WAVE)
-#include "sound/wave.h"
-#endif
-#endif
-
 
 #define SOUND_YM2151_ALT SOUND_YM2151
 
@@ -386,17 +378,7 @@ enum
 	SOUND_YMF271,
 #endif
 
-#ifdef MESS
-#if (HAS_BEEP)
-	SOUND_BEEP,
-#endif
-#if (HAS_SPEAKER)
-	SOUND_SPEAKER,
-#endif
-#if (HAS_WAVE)
-	SOUND_WAVE,
-#endif
-#endif
+
 	SOUND_COUNT
 };
 
