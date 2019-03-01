@@ -10,10 +10,6 @@
 #include "driver.h"
 #include "ui_text.h"
 
-#ifdef MESS
-extern const char *mess_default_text[];
-#endif /* MESS */
-
 
 struct lang_struct lang;
 
@@ -23,9 +19,7 @@ static const char *mame_default_text[] =
 	"MAME",
 
 	/* copyright stuff */
-	"Usage of emulators in conjunction with ROMs you don't own is forbidden by copyright law.",
-	"IF YOU ARE NOT LEGALLY ENTITLED TO PLAY \"%s\" ON THIS EMULATOR, PRESS ESC.",
-	"To continue, type OK on Keyboard *OR* Left then Right on Joystick",
+	"Copyright Warning:\nCopying game data without permission is forbidden by copyright law. If you are not entitled to emulate this system, please exit now.\n",
 
 	/* misc stuff */
 	"Return to Main Menu",
@@ -66,18 +60,17 @@ static const char *mame_default_text[] =
 	"\x1b",
 
 	/* known problems */
-	"There are known problems with this game:",
-	"The colors aren't 100% accurate.",
-	"The colors are completely wrong.",
-	"The video emulation isn't 100% accurate.",
-	"The sound emulation isn't 100% accurate.",
-	"The game lacks sound.",
-	"Screen flipping in cocktail mode is not supported.",
-	"THIS GAME DOESN'T WORK PROPERLY",
-	"The game has protection which isn't fully emulated.",
-	"This game must be intialized in order to be playable.",
-	"There are working clones of this game. They are:",
-    "Type OK on Keyboard, or Left, Right on Joystick to continue",
+	"Driver warnings: ",
+	"imperfect colors",
+	"wrong colors",
+	"imperfect video",
+	"imperfect sound",
+	"missing sound",
+	"missing cocktail mode",
+	"game does not work",
+	"unimplemented protection",
+	"missing serialization",
+	"There are working clones of this game:",
 
 	/* main menu */
 	"Input (general)",
@@ -86,10 +79,12 @@ static const char *mame_default_text[] =
 	"Calibrate Joysticks",
 	"Bookkeeping Info",
 	"Input (this game)",
+  "Flush Current CFG",
+  "Flush All CFGs",  
 	"Game Information",
 	"Game History",
 	"Reset Game",
-    "Generate XML DAT",
+  "Generate XML DAT",  
 	"Return to Game",
 	"Cheat",
 	"Memory Card",
@@ -185,9 +180,6 @@ static const char *mame_default_text[] =
 static const char **default_text[] =
 {
 	mame_default_text,
-#ifdef MESS
-	mess_default_text,
-#endif /* MESS */
 	NULL
 };
 
